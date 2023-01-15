@@ -67,3 +67,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "maglevcms-hyperui-kit", "~> 1.1"
+gem "image_processing", "~> 1.12"
+gem "maglevcms", github: 'captproton/maglev-core', branch: 'develop'

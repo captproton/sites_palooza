@@ -79,3 +79,5 @@ end
 gem "acts_as_tenant", "~> 0.6.0"
 
 gem "devise", "~> 4.8"
+
+gem "ffaker", "~> 2.21"

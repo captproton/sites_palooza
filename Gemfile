@@ -75,3 +75,7 @@ gem "maglevcms", github: 'captproton/maglev-core', branch: 'develop'
 group :development, :test do
   gem "rspec-rails"
 end
+
+gem "acts_as_tenant", "~> 0.6.0"
+
+gem "devise", "~> 4.8"

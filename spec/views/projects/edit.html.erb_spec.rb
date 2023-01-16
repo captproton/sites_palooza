@@ -4,7 +4,7 @@ RSpec.describe "projects/edit", type: :view do
   let(:project) {
     Project.create!(
       name: "MyString",
-      account_belongs_to: "MyString"
+      account: nil
     )
   }
 
@@ -19,7 +19,7 @@ RSpec.describe "projects/edit", type: :view do
 
       assert_select "input[name=?]", "project[name]"
 
-      assert_select "input[name=?]", "project[account_belongs_to]"
+      assert_select "input[name=?]", "project[account_id]"
     end
   end
 end

@@ -4,7 +4,7 @@ RSpec.describe "projects/new", type: :view do
   before(:each) do
     assign(:project, Project.new(
       name: "MyString",
-      account_belongs_to: "MyString"
+      account: nil
     ))
   end
 
@@ -15,7 +15,7 @@ RSpec.describe "projects/new", type: :view do
 
       assert_select "input[name=?]", "project[name]"
 
-      assert_select "input[name=?]", "project[account_belongs_to]"
+      assert_select "input[name=?]", "project[account_id]"
     end
   end
 end

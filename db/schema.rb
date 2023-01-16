@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_183955) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_220903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,6 +92,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_183955) do
     t.jsonb "sections_translations", default: {}
     t.integer "lock_version"
     t.jsonb "style", default: []
+    t.integer "siteable_id"
+    t.string "siteable_type"
+    t.string "handle"
+    t.bigint "account_id", null: false
+    t.index ["account_id"], name: "index_maglev_sites_on_account_id"
+    t.index ["siteable_type", "siteable_id"], name: "index_maglev_sites_on_siteable_type_and_siteable_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -125,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_183955) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "maglev_sites", "accounts"
   add_foreign_key "posts", "users"
   add_foreign_key "projects", "accounts"
 end

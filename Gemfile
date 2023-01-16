@@ -71,3 +71,7 @@ end
 gem "maglevcms-hyperui-kit", "~> 1.1"
 gem "image_processing", "~> 1.12"
 gem "maglevcms", github: 'captproton/maglev-core', branch: 'develop'
+
+group :development, :test do
+  gem "rspec-rails"
+end

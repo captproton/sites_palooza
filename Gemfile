@@ -81,3 +81,12 @@ gem "acts_as_tenant", "~> 0.6.0"
 gem "devise", "~> 4.8"
 
 gem "ffaker", "~> 2.21"
+
+group :development, :test do
+  gem "rspec-rails"
+end
+
+group :development, :test do
+  gem "factory_bot_rails"
+end
+gem "standard", group: [:development, :test]
